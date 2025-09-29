@@ -1,4 +1,5 @@
 import React from 'react'
+import "@/public/logo.png" 
 import {
     Sidebar,
     SidebarContent,
@@ -11,35 +12,60 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import {  AudioLines, CalendarDays , ChartNoAxesCombined, GalleryThumbnails, Gauge, Home, ImageIcon, Inbox, Lightbulb, ScrollText, Search, Settings, Settings2, User2 } from "lucide-react"
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const items = [
     {
         title: "Home",
-        url: "#",
+        url: "/dashboard",
         icon: Home,
     },
     {
-        title: "Inbox",
-        url: "#",
-        icon: Inbox,
+        title: "Thumbnail Generator",
+        url: "/ai-thumbnail-generator",
+        icon: ImageIcon,
     },
     {
-        title: "Calendar",
-        url: "#",
-        icon: Calendar,
+        title: "Thumbnail Search",
+        url: "/thumbnail-search",
+        icon: GalleryThumbnails,
     },
     {
-        title: "Search",
-        url: "#",
-        icon: Search,
+        title: "Content Calender",
+        url: "/content-calender",
+        icon: CalendarDays ,
     },
     {
-        title: "Settings",
+        title: "Trend Analyzer",
         url: "#",
-        icon: Settings,
+        icon: ChartNoAxesCombined,
+    },
+    {
+        title: "AI Script Generator",
+        url:"/script-generator",
+        icon:ScrollText 
+    },
+    {
+        title: "AI Voice Over",
+        url: "/ai-voice-over",
+        icon: AudioLines ,
+    },
+    {
+        title: "AI Content Generator",
+        url: "/ai-content-generator",
+        icon: Lightbulb,
+    },
+    {
+        title: "Billing",
+        url: "#",
+        icon: Settings2,
+    },
+    {
+        title: "Profile",
+        url: "#",
+        icon: User2,
     },
 ]
 
@@ -49,9 +75,11 @@ export function AppSidebar() {
         <Sidebar>
             <SidebarHeader>
                 <div className='p-4'>
-                    <Image src={'./logo.svg'} alt='logo' width={100} height={100}
-                        className='w-full h-full' />
-                    <h2 className='text-sm text-gray-400 text-center'>Build Awesome</h2>
+                    <Image src={'/logo.png'} alt='logo' width={1024} height={1024}
+                        className='w-full h-full rounded-full' 
+                        
+                        />
+                    <h2 className='text-sm text-gray-400 text-center'></h2>
                 </div>
             </SidebarHeader>
             <SidebarContent>
@@ -75,7 +103,7 @@ export function AppSidebar() {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
-                <h2 className='p-2 text-gray-400 text-sm'>Copyright @Tubeguruji</h2>
+                <h2 className='p-2 text-gray-400 text-sm'></h2>
             </SidebarFooter>
         </Sidebar>
     )
